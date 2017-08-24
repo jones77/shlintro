@@ -1,6 +1,22 @@
 # shlintro
 
-`shlintro` is a script you copy paste as a first step to creating a decent shell script
+`shlintro` is the minimum template for a decent shell script
+
+## Example Usage
+
+### Create a new shell script
+
+    cp shlintro a_pleasant_shell_script.sh
+    chmod 755 a_pleasant_shell_script.sh
+    git add ./a_pleasant_shell_script.sh
+
+### Run your new shell script
+
+    ./a_pleasant_shell_script.sh --help
+
+### Edit your new shell script
+
+    $EDITOR ./a_pleasant_shell_script.sh
 
 # Resources for writing Bash shell scripts
 
