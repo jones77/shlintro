@@ -1,48 +1,52 @@
 #!/usr/bin/env bash
-# FIXME: delete this FIXME --- more info at https://github.com/jones77/shlintro
 set -o errexit && set -o nounset && set -o pipefail && : # set -o xtrace
-__basename="$(      basename "${BASH_SOURCE[0]}" )"
-__dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-exit_fail() { [[ -n "$@" ]] && echo "$__basename: $@"; usage; exit 1; }
-usage() {
+# FIXME: delete this FIXME --- more info at https://github.com/jones77/shlintro
+__usage() {
     cat <<USAGE
 
-Usage: $__basename [OPTION]... [FILES]...
+Usage: ${__basename} [OPTION]... [FILES]...
 
   FIXME: a) Update the description, b) describe what the script does, and
   c) check the usage and delete '[FILES]...' if this script doesn't process
   files (ie uses strict argument parsing).
 
 Example:
-  $__basename -e first --example second a b c
+  ${__basename} -e first --example second a b c
 
 Options:
   -h, --help            Show this help and exit
   -e, --example ARG     Print example "ARG" information
 USAGE
 };
-# TODO: specify script arguments
-__getopt_args=$(set +e && getopt -s bash \
-    --options "he:" \
-    --longoptions "help,example:" \
-    --name ${__basename} -- "$@"
-) && eval set -- "${__getopt_args}" || exit_fail
+__short_options="he:"
+__long_options="help,example:"
+__basename="$(      basename "${BASH_SOURCE[0]}" )"
+__dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+__fatal() { [[ -n "$@" ]] && echo "$__basename: $@"; __usage; exit 1; }
+__getopt_args=$(set +e && getopt -T || if (( $? == 4 )); then
+    getopt -s bash --options "${__short_options}" --longoptions \
+        "${__long_options}" --name ${__basename} -- "$@"  # Always returns '--'
+else
+    echo 'bad getopt version: getopt -T || (( $? == 4 )) is false'; exit 1
+fi) && eval set -- "${__getopt_args}" || __fatal "${__getopt_args/ --/}"
+# FIXME:                                     breaks vim highlighting ^^
 while :
 do
     case $1 in
-	-h|--help) usage && exit 0 ;;
-	# --) :  # strict argument parsing, continue
-	--) break  # [FILES]... argument parsing, break
+	-h|--help) __usage && exit 0 ;;
+	--) :  # strict argument parsing, continue && shift
+	# --) shift && break  # file argument parsing, shift && break
             ;;
         -e|--example)
             shift && echo "The example option's argument is: $1"
 	    ;;
 	*)
-            exit_fail "invalid option: $1"
+            __fatal "invalid option: $1"
             ;;
    esac && shift
 done
-while (( $# ))  # [FILES]... argument parsing
+
+while (( $# ))  # file argument parsing
 do
     echo "Do something with: $1"
 
