@@ -16,10 +16,10 @@ Use shlintro as the basis for a new shell script.
 
 ### Tutorial
 
-    _s="a_nice_shell_script.sh"
-    cp shlintro "$_s" && chmod 755 "$_s"
-    "./$_s" --help
-    $EDITOR "$_s"
+    _s="a_nice_shell_script.sh"           # "Don't Repeate Yourself"
+    cp shlintro "$_s" && chmod 755 "$_s"  # Create executable script
+    "./$_s" --help                        # Run the dummy script
+    $EDITOR "$_s"                         # Get to work
 
 ## Resources for writing Bash shell scripts
 
