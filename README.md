@@ -4,15 +4,15 @@ Minimum template for a decent shell script.
 
 ## Usage
 
-Use shlintro as the basis for a new shell script
+Use shlintro as the basis for a new shell script.
 
 ### Offline
 
-  cp /path/to/_shlintro new_script.sh
+    cp /path/to/_shlintro new_script.sh
 
 ### Online
 
-  curl https://raw.githubusercontent.com/jones77/shlintro/master/shlintro >new_script.sh
+    curl https://raw.githubusercontent.com/jones77/shlintro/master/shlintro >new_script.sh
 
 ### Tutorial
 
