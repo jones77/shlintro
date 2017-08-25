@@ -1,6 +1,4 @@
-# shlintro
-
-`shlintro` is the minimum template for a decent shell script
+# `shlintro` &mdash; minimum template for a decent shell script
 
 ## Usage
 
