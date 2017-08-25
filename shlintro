@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
-# FIXME: delete <-- this line #### https://github.com/jones77/shlintro for more info
-declare -r __basename="$(      basename "${BASH_SOURCE[0]}" )"
-declare -r __dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# FIXME: delete this FIXME --- more info at https://github.com/jones77/shlintro
 set -o errexit && set -o nounset && set -o pipefail && : # set -o xtrace
-exit_fail() { echo "$__basename: Error: $@" && echo && usage && exit 1; }
+__basename="$(      basename "${BASH_SOURCE[0]}" )"
+__dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+exit_fail() { [[ -n "$@" ]] && echo "$__basename: $@"; usage; exit 1; }
 usage() {
-    # FIXME: Better description
-    # FIXME: Remove "[FILES]..." if you're using strict argument parsing
     cat <<USAGE
+
 Usage: $__basename [OPTION]... [FILES]...
 
-  FIXME: Update this description describing what the script does
+  FIXME: a) Update the description, b) describe what the script does, and
+  c) check the usage and delete '[FILES]...' if this script doesn't process
+  files (ie uses strict argument parsing).
 
 Example:
-  $__basename -e example a b c
+  $__basename -e first --example second a b c
 
 Options:
   -h, --help            Show this help and exit
@@ -21,20 +22,24 @@ Options:
 USAGE
 };
 # TODO: specify script arguments
-declare -r getopt_args=$(getopt -s bash \
-    --options     "the:" \
+__getopt_args=$(set +e && getopt -s bash \
+    --options "he:" \
     --longoptions "help,example:" \
-    --name ${__basename} -- "$@") && eval set -- "${getopt_args}"
+    --name ${__basename} -- "$@"
+) && eval set -- "${__getopt_args}" || exit_fail
 while :
 do
     case $1 in
 	-h|--help) usage && exit 0 ;;
-	--) exit_fail "Unexpected arguments: $@" ;;  # strict argument parsing
-	# --) shift && break ;;  # [FILES]... argument parsing
+	# --) :  # strict argument parsing, continue
+	--) break  # [FILES]... argument parsing, break
+            ;;
         -e|--example)
             shift && echo "The example option's argument is: $1"
 	    ;;
-	*)  exit_fail "Bad arguments: $1" ;;
+	*)
+            exit_fail "invalid option: $1"
+            ;;
    esac && shift
 done
 while (( $# ))  # [FILES]... argument parsing
