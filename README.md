@@ -2,25 +2,19 @@
 
 `shlintro` is the minimum template for a decent shell script
 
-## Example Usage
+## Usage
 
-### Create a new shell script
+### Use shlintro as the basis for a new shell script
 
-    cp shlintro a_pleasant_shell_script.sh
-    chmod 755 a_pleasant_shell_script.sh
-    git add ./a_pleasant_shell_script.sh
-
-### Run your new shell script
-
-    ./a_pleasant_shell_script.sh --help
-
-### Edit your new shell script
-
-    $EDITOR ./a_pleasant_shell_script.sh
+    _s="a_nice_shell_script.sh"
+    cp shlintro "$_s" && chmod 755 "$_s"
+    "$_s" --help
+    $EDITOR "$_s"
 
 # Resources for writing Bash shell scripts
 
-* `man bash  # rtfm`
+* `man bash`
 * [Kevin van Zonneveld's Best Practices for Writing Bash
   Scripts](http://kvz.io/blog/2013/11/21/bash-best-practices/) (partially
   distilled to make `shlintro`)
+* http://google.com?q=bash+shell+scripting
