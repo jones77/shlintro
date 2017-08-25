@@ -31,4 +31,5 @@ The minimal template for a usable shell script.
 
 ## Ironies
 
-* References to Don't Repeat Yourself when `shlintro` actively encourages shell scripts to have their first ~50 lines copy pasted from `shlintro` ...
+* References to Don't Repeat Yourself when `shlintro` actively encourages shell
+  scripts to copy paste their first ~50 from `shlintro`.
