@@ -1,3 +1,3 @@
 # Contributing
 
-[Use good git commit message.](https://chris.beams.io/posts/git-commit/)
+[Use good git commit message](https://chris.beams.io/posts/git-commit/)
