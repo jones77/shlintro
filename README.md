@@ -1,10 +1,10 @@
 # `shlintro`
 
-Minimum template for a decent shell script.
+The minimal template for a usable shell script.
 
 ## Usage
 
-Use shlintro as the basis for a new shell script.
+**Copy** `shlintro` when you create a new shell script.
 
 ### Offline
 
@@ -16,7 +16,7 @@ Use shlintro as the basis for a new shell script.
 
 ### Tutorial
 
-    _s="a_nice_shell_script.sh"           # "Don't Repeate Yourself"
+    _s="new_script.sh"                    # https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
     cp shlintro "$_s" && chmod 755 "$_s"  # Create executable script
     "./$_s" --help                        # Run the dummy script
     $EDITOR "$_s"                         # Get to work
@@ -28,3 +28,7 @@ Use shlintro as the basis for a new shell script.
 * [Kevin van Zonneveld's Best Practices for Writing Bash
   Scripts](http://kvz.io/blog/2013/11/21/bash-best-practices/) (partially
   distilled to make `shlintro`)
+
+## Ironies
+
+* References to Don't Repeat Yourself when `shlintro` actively encourages shell scripts to have their first ~50 lines copy pasted from `shlintro` ...
