@@ -14,7 +14,7 @@
 # Resources for writing Bash shell scripts
 
 * `man bash`
+* http://google.com?q=bash+shell+scripting
 * [Kevin van Zonneveld's Best Practices for Writing Bash
   Scripts](http://kvz.io/blog/2013/11/21/bash-best-practices/) (partially
   distilled to make `shlintro`)
-* http://google.com?q=bash+shell+scripting
