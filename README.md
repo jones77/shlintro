@@ -31,5 +31,5 @@ Copy `shlintro` when you create a new shell script.
 
 ## **Ironies**
 
-* References to Don't Repeat Yourself when `shlintro` actively encourages shell
-  scripts to copy paste their first ~50 from `shlintro`.
+* References to Don't Repeat Yourself when `shlintro` actively encourages creating shell
+  scripts by copying `shlintro`.
