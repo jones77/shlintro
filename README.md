@@ -1,4 +1,6 @@
-# `shlintro` &mdash; minimum template for a decent shell script
+# `shlintro`
+
+minimum template for a decent shell script
 
 ## Usage
 
