@@ -2,8 +2,6 @@
 
 *A minimal template for a usable shell script*
 
-----
-
 ## **Usage**
 
 Copy `shlintro` when you create a new shell script.
@@ -23,8 +21,6 @@ Copy `shlintro` when you create a new shell script.
     "./$_s" --help                        # Run the dummy script
     $EDITOR "$_s"                         # Get to work
 
-----
-
 ## **Resources for writing Bash shell scripts**
 
 * [`man bash`](https://tiswww.case.edu/php/chet/bash/bash.html)
@@ -32,8 +28,6 @@ Copy `shlintro` when you create a new shell script.
 * [Kevin van Zonneveld's Best Practices for Writing Bash
   Scripts](http://kvz.io/blog/2013/11/21/bash-best-practices/) (partially
   distilled to make `shlintro`)
-
-----
 
 ## **Ironies**
 
