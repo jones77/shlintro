@@ -40,12 +40,9 @@ do
         -e|--example)
             shift && echo "The example option's argument is: $1"
 	    ;;
-	*)
-            __fatal "invalid option: $1"
-            ;;
+	*) __fatal "invalid option: $1" ;;
    esac && shift
 done
-
 while (( $# ))  # file argument parsing
 do
     echo "Do something with: $1"
