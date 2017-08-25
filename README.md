@@ -6,15 +6,15 @@
 
 Copy `shlintro` when you create a new shell script.
 
-### Offline
+#### Offline
 
     cp /path/to/_shlintro new_script.sh
 
-### Online
+#### Online
 
     curl https://raw.githubusercontent.com/jones77/shlintro/master/shlintro >new_script.sh
 
-### Tutorial
+#### Tutorial
 
     _s="new_script.sh"                    # https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
     cp shlintro "$_s" && chmod 755 "$_s"  # Create executable script
