@@ -6,9 +6,10 @@ __usage() {
 
 Usage: ${__basename} [OPTION]... [FILES]...
 
-  FIXME: a) Update the description, b) describe what the script does, and
-  c) check the usage and delete '[FILES]...' if this script doesn't process
-  files (ie uses strict argument parsing).
+  FIXME: a) Update this description paragraph, describing what the script's for
+  b) if this script doesn't process files (ie uses strict argument parsing)
+     delete '[FILES]...' from the above usage string
+  c) based on b) fix the '--)' case statement.
 
 Example:
   ${__basename} -e first --example second a b c
@@ -28,8 +29,7 @@ __getopt_args=$(set +e && getopt -T || if (( $? == 4 )); then
         "${__long_options}" --name ${__basename} -- "$@"  # Always returns '--'
 else
     echo 'bad getopt version: getopt -T || (( $? == 4 )) is false'; exit 1
-fi) && eval set -- "${__getopt_args}" || __fatal "${__getopt_args/ --/}"
-# FIXME:                                     breaks vim highlighting ^^
+fi) && eval set -- "${__getopt_args}" || __fatal "${__getopt_args/^ --$/}"
 while :
 do
     case $1 in
@@ -43,9 +43,8 @@ do
 	*) __fatal "invalid option: $1" ;;
    esac && shift
 done
-while (( $# ))  # file argument parsing
+while (( $# ))  # file argument parsing, FIXME: read from stdin?
 do
     echo "Do something with: $1"
-
     shift
 done
