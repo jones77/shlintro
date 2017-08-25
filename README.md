@@ -1,10 +1,10 @@
 # `shlintro`
 
-The minimal template for a usable shell script.
+*A minimal template for a usable shell script*
 
 ## Usage
 
-**Copy** `shlintro` when you create a new shell script.
+Copy `shlintro` when you create a new shell script.
 
 ### Offline
 
