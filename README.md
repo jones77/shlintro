@@ -6,7 +6,7 @@
 
 #### Simple
 
-cp /path/to/_shlintro new_script.sh
+  cp /path/to/_shlintro new_script.sh
 
 #### Overly complicated
 
