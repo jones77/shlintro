@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# FIXME: delete this line #### https://github.com/jones77/shlintro for more info
+# FIXME: delete <-- this line #### https://github.com/jones77/shlintro for more info
 declare -r __basename="$(      basename "${BASH_SOURCE[0]}" )"
 declare -r __dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 set -o errexit && set -o nounset && set -o pipefail && : # set -o xtrace
