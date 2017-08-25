@@ -2,17 +2,21 @@
 
 ## Usage
 
-### Use shlintro as the basis for a new shell script
+Use shlintro as the basis for a new shell script
 
-#### Simple
+### Offline
 
   cp /path/to/_shlintro new_script.sh
 
-#### Overly complicated
+### Online
+
+  curl https://raw.githubusercontent.com/jones77/shlintro/master/shlintro >new_script.sh
+
+### Tutorial
 
     _s="a_nice_shell_script.sh"
     cp shlintro "$_s" && chmod 755 "$_s"
-    "$_s" --help
+    "./$_s" --help
     $EDITOR "$_s"
 
 ## Resources for writing Bash shell scripts
