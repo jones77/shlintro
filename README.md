@@ -11,7 +11,7 @@
     "$_s" --help
     $EDITOR "$_s"
 
-# Resources for writing Bash shell scripts
+## Resources for writing Bash shell scripts
 
 * [`man bash`](https://tiswww.case.edu/php/chet/bash/bash.html)
 * [google.com?q=bash+shell+scripting](http://google.com?q=bash+shell+scripting)
