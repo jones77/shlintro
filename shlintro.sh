@@ -4,10 +4,9 @@ set -o nounset && set -o errexit && set -o pipefail
 __usage() { cat <<USAGE
 Usage: ${__basename} [OPTION]... [FILES]...
 
-  FIXME: a) Update this description paragraph, describing what the script's for
-  b) if this script doesn't process files (ie uses strict argument parsing)
-     delete '[FILES]...' from the above usage string
-  c) based on b) fix the '--)' case statement.
+  FIXME: describe what this script is for
+  FIXME: if not processing files (ie strict argument parsing) delete:
+    a) [FILES]... from above; b) --) case statement; c) [FILES]... while loop
 
 Example:
   ${__basename} -e first --example second a b c
