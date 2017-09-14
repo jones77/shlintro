@@ -16,3 +16,4 @@ t -h        || e "unexpected nonzero \$?=$?"
 # bad options
 t -x        && e "unexpected zero \$?=$?"
 t --xx      && e "unexpected zero \$?=$?"
+printf "SUCCESS, as expected\n"
