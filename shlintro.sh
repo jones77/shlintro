@@ -20,7 +20,7 @@ USAGE
 __longopts="help,example:"
 __basename="$(      basename "${BASH_SOURCE[0]}" )"
 __dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-__fatal(){ [ -n "$@" ]&&printf "$__basename: $@\n\n";__usage;exit 1;}
+__fatal(){ [[ -n "$@" ]] && printf "$__basename: $@\n\n"; __usage; exit 1;}
 __args=$(set +e && getopt -T || if (( $? == 4 )); then
     getopt -s"bash" -o"${__shopts}" -l"${__longopts}" -n"${__basename}" -- "$@"
 else
