@@ -25,7 +25,7 @@ Copy `shlintro.sh` when you create a new shell script.
     "./$_s" --help
 
     # Create a test runner skeleton for the new script and run it
-    cp test_shlintro.sh "test_${_s}.sh" && "./test_${_s}.sh"
+    cp test_shlintro.sh "test_${_s}" && "./test_${_s}"
 
 Should output:
 
