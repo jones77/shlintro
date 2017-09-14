@@ -35,3 +35,15 @@ Copy `shlintro.sh` when you create a new shell script.
   Scripts](http://kvz.io/blog/2013/11/21/bash-best-practices/) (partially
   distilled to make `shlintro.sh`)
 * [FIXME](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+
+<!--
+
+# TODO
+
+* Create a graph out of:
+
+    git log --follow --stat shlintro.sh | grep 'changed\|insertion\|deletion
+
+    git log --follow --stat shlintro.sh | grep '^ shlintro'
+
+-->
