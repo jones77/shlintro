@@ -22,8 +22,7 @@ __dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 __fatal(){ [[ -n "$@" ]] && printf "$__basename: $@\n\n"; __usage; exit 1;}
 __args=$(set +e && getopt -T || if (( $? == 4 )); then
     getopt -s"bash" -o"${__shopts}" -l"${__longopts}" -n"${__basename}" -- "$@"
-else
-    echo 'bad getopt version: getopt -T || (( $? == 4 )) is false'; exit 1
+    else echo 'bad getopt version: getopt -T || (( $? == 4 )) is false'; exit 1
 fi) && eval set -- "${__args}" || __fatal ""  # If we call __fatal "" then
 # getopt has already printed invalid option -- 'x' or unrecognized option '--x'
 while (( $# ))
