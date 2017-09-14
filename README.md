@@ -16,7 +16,7 @@ Copy `shlintro.sh` when you create a new shell script.
 
 ### Tutorial
 
-    _s="new_script.sh"                    # https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+    _s="new_script.sh"
     cp shlintro.sh "$_s" && chmod 755 "$_s"  # Create executable script
     "./$_s" --help                        # Run the dummy script
     $EDITOR "$_s"                         # Get to work
@@ -28,3 +28,4 @@ Copy `shlintro.sh` when you create a new shell script.
 * [Kevin van Zonneveld's Best Practices for Writing Bash
   Scripts](http://kvz.io/blog/2013/11/21/bash-best-practices/) (partially
   distilled to make `shlintro.sh`)
+* [FIXME](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
