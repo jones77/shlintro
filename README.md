@@ -24,8 +24,17 @@ Copy `shlintro.sh` when you create a new shell script.
     # Run the dummy script
     "./$_s" --help
 
-    # Get to work
-    $EDITOR "$_s"
+    # Create a test runner skeleton for the new script and run it
+    cp test_shlintro.sh "test_${_s}.sh" && "./test_${_s}.sh"
+
+Should output:
+
+    Testing: new_script.sh
+    Testing: new_script.sh --help
+    Testing: new_script.sh -h
+    Testing: new_script.sh -x
+    Testing: new_script.sh --xx
+    SUCCESS, as expected
 
 ## **Resources for writing Bash shell scripts**
 
