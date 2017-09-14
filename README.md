@@ -17,9 +17,15 @@ Copy `shlintro.sh` when you create a new shell script.
 ### Tutorial
 
     _s="new_script.sh"
-    cp shlintro.sh "$_s" && chmod 755 "$_s"  # Create executable script
-    "./$_s" --help                        # Run the dummy script
-    $EDITOR "$_s"                         # Get to work
+
+    # Create executable script
+    cp shlintro.sh "$_s" && chmod 755 "$_s"
+
+    # Run the dummy script
+    "./$_s" --help
+
+    # Get to work
+    $EDITOR "$_s"
 
 ## **Resources for writing Bash shell scripts**
 
