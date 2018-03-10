@@ -32,10 +32,10 @@ Copy `shlintro.sh` when you create a new shell script.
     $ # Create your new executable script
     cp shlintro.sh "$_s"
     chmod 755 "$_s"
-    $ Run the new script
+    $ # Run the new script
     "./$_s" --help
     $ cp shlintro.sh "$_s"
-    $ Create a test runner skeleton for the new script and run it
+    $ # Create a test runner skeleton for the new script and run it
     cp test_shlintro.sh "test_${_s}"
     $ chmod 755 "$_s"
     $ # Run the new script
